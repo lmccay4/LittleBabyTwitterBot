@@ -30,10 +30,10 @@ namespace LittleBabyDylan
                 TimeSpan mins = TimeSpan.FromMinutes(4);
                 if (tweet.CreatedAt >= pullTime.Subtract(mins)) 
                 {
-                    if (tweet.Text.ToString().Contains("r") || tweet.Text.ToString().Contains("R") || tweet.Text.ToString().Contains("l") || tweet.Text.ToString().Contains("L"))
+                    if (tweet.Text.Contains("r") || tweet.Text.Contains("R") || tweet.Text.Contains("l") || tweet.Text.Contains("L"))
                     { 
                         var culture = new CultureInfo("en-US");
-                        string editedTweet = tweet.Text.ToString().Replace("r", "w", true, culture).Replace("l", "w", true, culture);
+                        string editedTweet = tweet.Text.Replace("r", "w", true, culture).Replace("l", "w", true, culture);
                         
                         if (!(string.IsNullOrEmpty(editedTweet)))
                         {
